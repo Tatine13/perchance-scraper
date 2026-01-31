@@ -1,27 +1,45 @@
 # Perchance Scraper
 
-A specialized tool for scraping and generating content from Perchance.org generators.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![Status](https://img.shields.io/badge/status-beta-orange)
 
-## Overview
+**Perchance Scraper** is a specialized tool for programmatically interacting with [Perchance.org](https://perchance.org) generators. It enables batch generation, data extraction, and testing of random text generators.
 
-This tool allows users to interface with Perchance generators programmatically, enabling batch generation and content extraction for testing and dataset creation.
+## 🚀 Features
 
-## Features
+- **Generator Interface**: Connect seamlessly to any public Perchance generator.
+- **Batch Processing**: Generate hundreds of outputs in a single run.
+- **Structured Export**: Save results to JSON, CSV, or TXT.
+- **Headless Mode**: Run efficiently in background processes.
 
-- **Generator Interface**: Connect to specific Perchance generators.
-- **Batch Processing**: Generate multiple outputs in a single run.
-- **Data Export**: Save generated outputs to structured files.
+## 📦 Installation
 
-## Usage
+```bash
+git clone https://github.com/Tatine13/perchance-scraper.git
+cd perchance-scraper
+pip install -r requirements.txt
+```
+
+## 💻 Usage
 
 ```python
 from perchance_gen import PerchanceScraper
 
-scraper = PerchanceScraper(generator_url="https://perchance.org/example")
-results = scraper.generate(count=10)
-print(results)
+# Initialize scraper for a specific generator
+scraper = PerchanceScraper(generator_url="https://perchance.org/fantasy-name-generator")
+
+# Generate 50 items
+results = scraper.generate(count=50)
+
+# Export to file
+scraper.save_json(results, "names.json")
 ```
 
-## License
+## 🤝 Contributing
 
-MIT
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
